@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjrsw7jao78qq"]
+
+[ext_resource type="Texture2D" uid="uid://ckxg0tbmb8dd4" path="res://Sprites/Atlas/Rocks.png" id="1_ifkrt"]
+[ext_resource type="Script" path="res://Scripts/Ground.cs" id="2_15k5m"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_36pq2"]
+texture = ExtResource("1_ifkrt")
+margins = Vector2i(4, 4)
+separation = Vector2i(8, 8)
+texture_region_size = Vector2i(36, 36)
+0:0/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7756l"]
+sources/1 = SubResource("TileSetAtlasSource_36pq2")
+
+[node name="Ground_tilemap" type="TileMap"]
+tile_set = SubResource("TileSet_7756l")
+format = 2
+script = ExtResource("2_15k5m")

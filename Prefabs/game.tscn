@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3s0yd5i4qpmn"]
+
+[ext_resource type="PackedScene" uid="uid://bjrsw7jao78qq" path="res://Prefabs/ground_tilemap.tscn" id="1_mam4i"]
+[ext_resource type="PackedScene" uid="uid://cd1x1rvmmc3c3" path="res://Prefabs/scanner_HUD.tscn" id="2_qs7xi"]
+[ext_resource type="TileSet" uid="uid://c8gjjrbycx8wc" path="res://Tilesets/Rock_tileset.tres" id="2_y2gun"]
+[ext_resource type="PackedScene" uid="uid://ck6585aqxoxku" path="res://Prefabs/player.tscn" id="3_06p7y"]
+
+[node name="Game" type="Node"]
+
+[node name="Ground_tilemap" parent="." instance=ExtResource("1_mam4i")]
+tile_set = ExtResource("2_y2gun")
+
+[node name="Player" parent="." instance=ExtResource("3_06p7y")]
+position = Vector2(551.45, -404.825)
+
+[node name="Scanner_HUD" parent="Player" instance=ExtResource("2_qs7xi")]
+offset_left = -576.0
+offset_top = -328.0
+offset_right = 576.0
+offset_bottom = 320.0

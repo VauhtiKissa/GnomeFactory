@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd1x1rvmmc3c3"]
+
+[ext_resource type="Script" path="res://Scripts/Scanner_HUD.cs" id="1_sr2bx"]
+[ext_resource type="TileSet" uid="uid://c8gjjrbycx8wc" path="res://Tilesets/Rock_tileset.tres" id="2_w8qko"]
+
+[node name="Scanner_HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sr2bx")
+Scanner_resolution_scale = 2
+
+[node name="Range_slider_background" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 632.0
+offset_right = 1136.0
+offset_bottom = 648.0
+
+[node name="X_offset_slider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 904.0
+offset_top = 632.0
+offset_right = 1352.0
+offset_bottom = 664.0
+scale = Vector2(0.5, 0.5)
+max_value = 50.0
+rounded = true
+
+[node name="Range_slider_background2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1136.0
+offset_top = 464.0
+offset_right = 1152.0
+offset_bottom = 632.0
+
+[node name="Y_offset_slider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 1152.0
+offset_top = 472.0
+offset_right = 1456.0
+offset_bottom = 504.0
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+max_value = 50.0
+rounded = true
+
+[node name="Scanner_map_background" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 464.0
+offset_right = 1136.0
+offset_bottom = 632.0
+
+[node name="Scanner_map" type="TileMap" parent="."]
+position = Vector2(904, 472)
+scale = Vector2(0.2, 0.2)
+tile_set = ExtResource("2_w8qko")
+format = 2
+
+[connection signal="drag_ended" from="X_offset_slider" to="." method="Change_scanner_offset"]
+[connection signal="drag_ended" from="Y_offset_slider" to="." method="Change_scanner_offset"]
